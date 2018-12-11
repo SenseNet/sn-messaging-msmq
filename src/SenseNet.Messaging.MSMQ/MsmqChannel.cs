@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.Text;
-//using System.EnterpriseServices;
-//using System.Configuration;
 using System.Threading;
-//using System.Diagnostics;
 using System.IO;
 using System.Messaging;
 using SenseNet.Diagnostics;
-//using SenseNet.ContentRepository.Storage.Data;
 using System.Linq;
-//using SenseNet.ContentRepository.Storage;
 
 namespace SenseNet.Communication.Messaging
 {
@@ -28,8 +22,7 @@ namespace SenseNet.Communication.Messaging
                 Message = "Queue test on startup.";
             }
         }
-
-
+        
         private List<MessageQueue> _sendQueues;
         private List<bool> _sendQueuesAvailable;
         private readonly ReaderWriterLockSlim _senderLock = new ReaderWriterLockSlim();
@@ -270,10 +263,6 @@ namespace SenseNet.Communication.Messaging
         {
             // send a dummy message to local queue to make sure the queue is readable
             var dummyMessage = new StartCheckMessage();
-            
-            //UNDONE: check if this is necessary
-            //dummyMessage.SenderInfo = ClusterMemberInfo;
-
             var messageBody = m_formatter.Serialize(dummyMessage);
 
             var message = CreateMessage(messageBody);

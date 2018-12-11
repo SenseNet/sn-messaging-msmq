@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SenseNet.Messaging.MSMQ</id>
+    <version>7.0.0</version>
+    <title>sensenet MSMQ messaging provider</title>
+    <authors>kavics,tusmester</authors>
+    <owners>sensenet</owners>
+    <licenseUrl>https://github.com/SenseNet/sn-messaging-msmq/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/SenseNet/sn-messaging-msmq</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/SenseNet/sn-resources/master/images/sn-icon/sensenet-icon-64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A sensenet messaging provider implementation for MSMQ.</description>
+    <copyright>Copyright © Sense/Net Inc.</copyright>
+    <tags>sensenet messaging msmq</tags>
+    <dependencies>
+      <dependency id="SenseNet.Services" version="7.5.0.2" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\SenseNet.Messaging.MSMQ.*" target="lib\net461" />
+  </files>
+</package>

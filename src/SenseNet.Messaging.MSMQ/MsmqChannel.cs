@@ -70,9 +70,8 @@ namespace SenseNet.Communication.Messaging
 
                 MessageQueue.ClearConnectionCache();
 
-                //UNDONE: uncomment this after updating Services reference
-                //if (Configuration.Messaging.ReconnectDelay > 0)
-                //    Thread.Sleep(Configuration.Messaging.ReconnectDelay * 1000);
+                if (Configuration.Messaging.ReconnectDelay > 0)
+                    Thread.Sleep(Configuration.Messaging.ReconnectDelay * 1000);
 
                 // reconnect
                 _receiveQueue = CreateQueue(_receiveQueue.Path);
@@ -296,9 +295,8 @@ namespace SenseNet.Communication.Messaging
             queue.Close();
             MessageQueue.ClearConnectionCache();
 
-            //UNDONE: uncomment this after updating Services reference
-            //if (Configuration.Messaging.ReconnectDelay > 0)
-            //    Thread.Sleep(Configuration.Messaging.ReconnectDelay * 1000);
+            if (Configuration.Messaging.ReconnectDelay > 0)
+                Thread.Sleep(Configuration.Messaging.ReconnectDelay * 1000);
 
             // reconnect
             var x = CreateQueue(queue.Path);
